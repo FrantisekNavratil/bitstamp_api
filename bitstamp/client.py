@@ -118,6 +118,13 @@ class Public(BaseClient):
         url = self._construct_url("ticker/", base, quote)
         return self._get(url, return_json=True, version=2)
 
+    def ticker_all(self):
+        """
+        Returns dictionary.
+        """
+        url = self._construct_url("ticker/", '', '')
+        return self._get(url, return_json=True, version=2)
+
     def ticker_hour(self, base="btc", quote="usd"):
         """
         Returns dictionary of the average ticker of the past hour.
